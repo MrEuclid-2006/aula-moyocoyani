@@ -1,0 +1,283 @@
+/* ============================================
+   AULA MOYOCOYANI — ESTILO BAUHAUS VINTAGE
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --crema: #F4ECD8;
+  --beige: #E8DCC0;
+  --rojo: #C1440E;
+  --azul: #1B3A6B;
+  --amarillo: #E3B505;
+  --negro: #1A1A1A;
+  --gris: #5C5C5C;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--crema);
+  color: var(--negro);
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* FORMAS BAUHAUS DE FONDO */
+.forma-bauhaus {
+  position: fixed;
+  z-index: 0;
+  opacity: 0.08;
+  pointer-events: none;
+}
+.circulo-rojo {
+  width: 300px; height: 300px;
+  background: var(--rojo);
+  border-radius: 50%;
+  top: 10%; left: -100px;
+}
+.cuadrado-azul {
+  width: 250px; height: 250px;
+  background: var(--azul);
+  bottom: 15%; right: -80px;
+  transform: rotate(15deg);
+}
+.triangulo-amarillo {
+  width: 0; height: 0;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-bottom: 200px solid var(--amarillo);
+  top: 50%; left: 45%;
+}
+
+/* ENCABEZADO */
+.encabezado {
+  text-align: center;
+  padding: 70px 20px 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-bauhaus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.logo-bauhaus .circulo {
+  width: 40px; height: 40px;
+  background: var(--rojo);
+  border-radius: 50%;
+}
+.logo-bauhaus .cuadrado {
+  width: 40px; height: 40px;
+  background: var(--azul);
+}
+.logo-bauhaus .triangulo {
+  width: 0; height: 0;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 40px solid var(--amarillo);
+}
+
+.encabezado h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 3.2em;
+  letter-spacing: 3px;
+  color: var(--negro);
+  margin-bottom: 10px;
+}
+
+.eslogan {
+  font-size: 1.1em;
+  color: var(--gris);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.autor {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9em;
+  color: var(--rojo);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* MATERIAS */
+.materias-contenedor {
+  max-width: 1200px;
+  margin: 20px auto 60px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.titulo-seccion {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  color: var(--negro);
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.titulo-seccion::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--negro);
+  margin: 15px auto 0;
+}
+
+.materias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* TARJETAS */
+.tarjeta-materia {
+  background: var(--crema);
+  border: 3px solid var(--negro);
+  padding: 40px 25px 30px;
+  text-decoration: none;
+  color: var(--negro);
+  display: block;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 8px 8px 0 var(--negro);
+}
+.tarjeta-materia:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 12px 12px 0 var(--negro);
+}
+
+.tarjeta-roja { border-color: var(--rojo); box-shadow: 8px 8px 0 var(--rojo); }
+.tarjeta-roja:hover { box-shadow: 12px 12px 0 var(--rojo); }
+.tarjeta-azul { border-color: var(--azul); box-shadow: 8px 8px 0 var(--azul); }
+.tarjeta-azul:hover { box-shadow: 12px 12px 0 var(--azul); }
+.tarjeta-amarilla { border-color: var(--amarillo); box-shadow: 8px 8px 0 var(--amarillo); }
+.tarjeta-amarilla:hover { box-shadow: 12px 12px 0 var(--amarillo); }
+
+.forma-icono {
+  margin-bottom: 20px;
+}
+.circulo-icono {
+  width: 50px; height: 50px;
+  background: var(--rojo);
+  border-radius: 50%;
+}
+.cuadrado-icono {
+  width: 50px; height: 50px;
+  background: var(--azul);
+}
+.triangulo-icono {
+  width: 0; height: 0;
+  border-left: 28px solid transparent;
+  border-right: 28px solid transparent;
+  border-bottom: 50px solid var(--amarillo);
+}
+
+.tarjeta-materia h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6em;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+.tarjeta-materia p {
+  font-size: 0.95em;
+  color: var(--gris);
+  margin-bottom: 20px;
+  min-height: 50px;
+}
+
+.boton-entrar {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9em;
+  letter-spacing: 2px;
+  color: var(--negro);
+  border-bottom: 2px solid var(--negro);
+  padding-bottom: 3px;
+  transition: all 0.2s;
+}
+.tarjeta-materia:hover .boton-entrar {
+  padding-left: 8px;
+}
+
+/* SOBRE MÍ */
+.sobre-mi {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  padding: 40px 30px;
+  background: var(--beige);
+  border: 3px solid var(--negro);
+  box-shadow: 8px 8px 0 var(--negro);
+  position: relative;
+  z-index: 2;
+}
+.sobre-mi h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+.sobre-mi p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+.frase-nahuatl {
+  font-style: italic;
+  text-align: center !important;
+  color: var(--rojo);
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 2px dashed var(--gris);
+}
+
+/* PIE */
+.pie-pagina {
+  text-align: center;
+  padding: 30px 20px;
+  position: relative;
+  z-index: 2;
+}
+.linea-bauhaus {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 20px;
+}
+.franja {
+  width: 60px;
+  height: 6px;
+}
+.franja.roja { background: var(--rojo); }
+.franja.azul { background: var(--azul); }
+.franja.amarilla { background: var(--amarillo); }
+
+.pie-pagina p {
+  font-size: 0.85em;
+  color: var(--gris);
+  letter-spacing: 1px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .encabezado h1 { font-size: 2em; letter-spacing: 1px; }
+  .eslogan { font-size: 0.95em; }
+  .materias-grid { grid-template-columns: 1fr; }
+  .forma-bauhaus { display: none; }
+}
