@@ -1,0 +1,379 @@
+/* ============================================
+   DERECHO — Estilos completos (autocontenido)
+   Estilo Bauhaus Vintage
+   ============================================ */
+
+/* VARIABLES DE COLOR */
+:root {
+  --crema: #F4ECD8;
+  --beige: #E8DCC0;
+  --rojo: #C1440E;
+  --azul: #1B3A6B;
+  --amarillo: #E3B505;
+  --negro: #1A1A1A;
+  --gris: #5C5C5C;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body.pagina-materia {
+  font-family: 'Inter', sans-serif;
+  background: var(--crema);
+  color: var(--negro);
+  line-height: 1.7;
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 60px;
+}
+
+/* ============================================
+   FORMAS BAUHAUS DE FONDO
+   ============================================ */
+.forma-bauhaus {
+  position: fixed;
+  z-index: 0;
+  opacity: 0.06;
+  pointer-events: none;
+}
+.circulo-rojo {
+  width: 220px;
+  height: 220px;
+  background: var(--rojo);
+  border-radius: 50%;
+  top: 15%;
+  left: -120px;
+}
+.cuadrado-azul {
+  width: 180px;
+  height: 180px;
+  background: var(--azul);
+  bottom: 10%;
+  right: -100px;
+  transform: rotate(15deg);
+}
+.triangulo-amarillo {
+  width: 0;
+  height: 0;
+  border-left: 90px solid transparent;
+  border-right: 90px solid transparent;
+  border-bottom: 150px solid var(--amarillo);
+  top: 60%;
+  left: 45%;
+}
+
+/* ============================================
+   BOTÓN VOLVER
+   ============================================ */
+.boton-volver {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.85em;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: var(--azul);
+  background: var(--crema);
+  padding: 10px 18px;
+  border: 2px solid var(--azul);
+  box-shadow: 4px 4px 0 var(--azul);
+  transition: all 0.2s;
+  z-index: 100;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.boton-volver:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--azul);
+}
+.flecha-volver {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-left: 3px solid var(--azul);
+  border-bottom: 3px solid var(--azul);
+  transform: rotate(45deg);
+  margin-left: 3px;
+}
+
+/* ============================================
+   ENCABEZADO DE MATERIA
+   ============================================ */
+.encabezado-materia {
+  text-align: center;
+  padding: 100px 20px 40px;
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.icono-materia {
+  margin: 0 auto 20px;
+}
+.cuadrado-azul-materia {
+  width: 70px;
+  height: 70px;
+  background: var(--azul);
+  box-shadow: 6px 6px 0 var(--negro);
+}
+.encabezado-materia h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 3em;
+  letter-spacing: 4px;
+  color: var(--azul);
+  margin-bottom: 10px;
+}
+.subtitulo-materia {
+  font-size: 1em;
+  color: var(--gris);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ============================================
+   SÍMBOLOS BAUHAUS EN TÍTULOS
+   ============================================ */
+.simbolo-cuadrado,
+.simbolo-triangulo,
+.simbolo-circulo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+.simbolo-cuadrado {
+  width: 18px;
+  height: 18px;
+  background: var(--azul);
+}
+.simbolo-triangulo {
+  width: 0;
+  height: 0;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-bottom: 20px solid var(--amarillo);
+}
+.simbolo-circulo {
+  width: 18px;
+  height: 18px;
+  background: var(--rojo);
+  border-radius: 50%;
+}
+
+/* ============================================
+   PRESENTACIÓN
+   ============================================ */
+.bloque-presentacion {
+  max-width: 850px;
+  margin: 20px auto 30px;
+  padding: 35px 40px;
+  background: var(--crema);
+  border: 3px solid var(--azul);
+  box-shadow: 8px 8px 0 var(--azul);
+  position: relative;
+  z-index: 2;
+}
+.bloque-presentacion h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5em;
+  color: var(--azul);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+.bloque-presentacion p {
+  margin-bottom: 15px;
+  text-align: justify;
+  font-size: 1.02em;
+}
+
+/* ============================================
+   FINES
+   ============================================ */
+.bloque-fines {
+  max-width: 850px;
+  margin: 0 auto 40px;
+  padding: 25px 35px;
+  background: var(--beige);
+  border-left: 8px solid var(--amarillo);
+  position: relative;
+  z-index: 2;
+}
+.bloque-fines h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2em;
+  margin-bottom: 12px;
+  color: var(--negro);
+  display: flex;
+  align-items: center;
+}
+.bloque-fines p {
+  font-size: 0.98em;
+  text-align: justify;
+}
+
+/* ============================================
+   BOTONES DE ACCESO
+   ============================================ */
+.bloque-botones {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+.titulo-botones {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4em;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+  color: var(--negro);
+}
+.titulo-botones::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--negro);
+  margin: 15px auto 0;
+}
+.botones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+.boton-materia {
+  background: var(--crema);
+  padding: 35px 25px;
+  text-decoration: none;
+  color: var(--negro);
+  border: 3px solid var(--negro);
+  box-shadow: 8px 8px 0 var(--negro);
+  transition: all 0.3s ease;
+  display: block;
+}
+.boton-materia:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 12px 12px 0 var(--negro);
+}
+.boton-contenido {
+  border-color: var(--azul);
+  box-shadow: 8px 8px 0 var(--azul);
+}
+.boton-contenido:hover { box-shadow: 12px 12px 0 var(--azul); }
+.boton-cursos {
+  border-color: var(--rojo);
+  box-shadow: 8px 8px 0 var(--rojo);
+}
+.boton-cursos:hover { box-shadow: 12px 12px 0 var(--rojo); }
+.boton-extra {
+  border-color: var(--amarillo);
+  box-shadow: 8px 8px 0 var(--amarillo);
+}
+.boton-extra:hover { box-shadow: 12px 12px 0 var(--amarillo); }
+.boton-extraclase {
+  border-color: var(--negro);
+  box-shadow: 8px 8px 0 var(--negro);
+}
+.boton-extraclase:hover { box-shadow: 12px 12px 0 var(--negro); }
+
+.forma-boton {
+  margin-bottom: 18px;
+}
+.cuadrado-icono-boton {
+  width: 45px;
+  height: 45px;
+  background: var(--azul);
+}
+.circulo-icono-boton {
+  width: 45px;
+  height: 45px;
+  background: var(--rojo);
+  border-radius: 50%;
+}
+.triangulo-icono-boton {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 45px solid var(--amarillo);
+}
+.rombo-icono-boton {
+  width: 38px;
+  height: 38px;
+  background: var(--negro);
+  transform: rotate(45deg);
+  margin: 5px 0 20px 5px;
+}
+
+.boton-materia h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15em;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.boton-materia p {
+  font-size: 0.9em;
+  color: var(--gris);
+  line-height: 1.5;
+}
+
+/* ============================================
+   PIE DE PÁGINA
+   ============================================ */
+.pie-pagina {
+  text-align: center;
+  padding: 30px 20px;
+  position: relative;
+  z-index: 2;
+  margin-top: 40px;
+}
+.linea-bauhaus {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 20px;
+}
+.franja {
+  width: 60px;
+  height: 6px;
+}
+.franja.roja { background: var(--rojo); }
+.franja.azul { background: var(--azul); }
+.franja.amarilla { background: var(--amarillo); }
+.pie-pagina p {
+  font-size: 0.85em;
+  color: var(--gris);
+  letter-spacing: 1px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 700px) {
+  .encabezado-materia h1 { font-size: 2em; letter-spacing: 2px; }
+  .boton-volver {
+    position: static;
+    display: inline-flex;
+    margin: 20px;
+  }
+  .encabezado-materia { padding-top: 20px; }
+  .forma-bauhaus { display: none; }
+  .bloque-presentacion,
+  .bloque-fines { padding: 25px 20px; }
+}
