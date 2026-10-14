@@ -1,7 +1,7 @@
 /* ============================================
    AULA MOYOCOYANI — ESTILO GLOBAL BAUHAUS VINTAGE
-   Este archivo es el CSS maestro de toda la web.
-   Sirve para portada, materias, contenido y cursos.
+   CSS MAESTRO: portada, materias, contenido,
+   cursos interactivos, evaluación, video e imagen.
    ============================================ */
 
 /* VARIABLES DE COLOR */
@@ -152,8 +152,6 @@ body.pagina-materia {
   color: var(--negro);
   display: block;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
   box-shadow: 8px 8px 0 var(--negro);
 }
 .tarjeta-materia:hover {
@@ -209,7 +207,7 @@ body.pagina-materia {
 .tarjeta-materia:hover .boton-entrar { padding-left: 8px; }
 
 /* ============================================
-   ÁREA DE MEJORA CONTINUA (portada)
+   ÁREA DE MEJORA CONTINUA
    ============================================ */
 .mejora-continua {
   max-width: 1200px;
@@ -313,7 +311,7 @@ body.pagina-materia {
 }
 
 /* ============================================
-   SOBRE MÍ / SOBRE ESTE PROYECTO
+   SOBRE MÍ
    ============================================ */
 .sobre-mi {
   max-width: 800px;
@@ -376,8 +374,7 @@ body.pagina-materia {
 }
 
 /* ============================================
-   BOTÓN VOLVER + ENCABEZADO DE MATERIA
-   (para páginas internas como cursos)
+   BOTÓN VOLVER
    ============================================ */
 .boton-volver {
   position: fixed;
@@ -414,6 +411,9 @@ body.pagina-materia {
   margin-left: 3px;
 }
 
+/* ============================================
+   ENCABEZADO DE MATERIA
+   ============================================ */
 .encabezado-materia {
   text-align: center;
   padding: 100px 20px 40px;
@@ -422,9 +422,7 @@ body.pagina-materia {
   max-width: 1000px;
   margin: 0 auto;
 }
-.icono-materia {
-  margin: 0 auto 20px;
-}
+.icono-materia { margin: 0 auto 20px; }
 .cuadrado-azul-materia {
   width: 70px;
   height: 70px;
@@ -475,7 +473,9 @@ body.pagina-materia {
   border-radius: 50%;
 }
 
-/* BLOQUES */
+/* ============================================
+   BLOQUES DE CONTENIDO
+   ============================================ */
 .bloque-presentacion {
   max-width: 850px;
   margin: 20px auto 30px;
@@ -524,6 +524,233 @@ body.pagina-materia {
 }
 
 /* ============================================
+   BOTONES DE ACCESO
+   ============================================ */
+.bloque-botones {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+.titulo-botones {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4em;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+  color: var(--negro);
+}
+.titulo-botones::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--negro);
+  margin: 15px auto 0;
+}
+.botones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+.boton-materia {
+  background: var(--crema);
+  padding: 35px 25px;
+  text-decoration: none;
+  color: var(--negro);
+  border: 3px solid var(--negro);
+  box-shadow: 8px 8px 0 var(--negro);
+  transition: all 0.3s ease;
+  display: block;
+}
+.boton-materia:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 12px 12px 0 var(--negro);
+}
+.boton-contenido { border-color: var(--azul); box-shadow: 8px 8px 0 var(--azul); }
+.boton-contenido:hover { box-shadow: 12px 12px 0 var(--azul); }
+.boton-cursos { border-color: var(--rojo); box-shadow: 8px 8px 0 var(--rojo); }
+.boton-cursos:hover { box-shadow: 12px 12px 0 var(--rojo); }
+.boton-extra { border-color: var(--amarillo); box-shadow: 8px 8px 0 var(--amarillo); }
+.boton-extra:hover { box-shadow: 12px 12px 0 var(--amarillo); }
+.boton-extraclase { border-color: var(--negro); box-shadow: 8px 8px 0 var(--negro); }
+.boton-extraclase:hover { box-shadow: 12px 12px 0 var(--negro); }
+
+.forma-boton { margin-bottom: 18px; }
+.cuadrado-icono-boton {
+  width: 45px; height: 45px;
+  background: var(--azul);
+}
+.circulo-icono-boton {
+  width: 45px; height: 45px;
+  background: var(--rojo);
+  border-radius: 50%;
+}
+.triangulo-icono-boton {
+  width: 0; height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 45px solid var(--amarillo);
+}
+.rombo-icono-boton {
+  width: 38px; height: 38px;
+  background: var(--negro);
+  transform: rotate(45deg);
+  margin: 5px 0 20px 5px;
+}
+
+.boton-materia h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15em;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.boton-materia p {
+  font-size: 0.9em;
+  color: var(--gris);
+  line-height: 1.5;
+}
+
+/* ============================================
+   TARJETAS DE UNIDAD DESPLEGABLES (ACORDEÓN)
+   ============================================ */
+.unidades-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tarjeta-unidad {
+  background: var(--crema);
+  border: 3px solid var(--negro);
+  box-shadow: 8px 8px 0 var(--negro);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.tarjeta-unidad-azul {
+  border-color: var(--azul);
+  box-shadow: 8px 8px 0 var(--azul);
+}
+.tarjeta-unidad-azul .numero-unidad { background: var(--azul); }
+
+.tarjeta-unidad-rojo {
+  border-color: var(--rojo);
+  box-shadow: 8px 8px 0 var(--rojo);
+}
+.tarjeta-unidad-rojo .numero-unidad { background: var(--rojo); }
+
+.tarjeta-unidad-amarilla {
+  border-color: var(--amarillo);
+  box-shadow: 8px 8px 0 var(--amarillo);
+}
+.tarjeta-unidad-amarilla .numero-unidad {
+  background: var(--amarillo);
+  color: var(--negro);
+}
+
+.cabecera-unidad {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 25px 30px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+.cabecera-unidad:hover { background: var(--beige); }
+
+.numero-unidad {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 2em;
+  color: white;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 4px 4px 0 var(--negro);
+}
+
+.titulo-unidad {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.titulo-unidad h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--negro);
+}
+.indicador {
+  font-size: 1.2em;
+  color: var(--negro);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.tarjeta-unidad.abierta .indicador { transform: rotate(180deg); }
+
+.contenido-desplegable {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  background: var(--beige);
+}
+.tarjeta-unidad.abierta .contenido-desplegable {
+  max-height: 5000px;
+  padding: 20px 30px 30px;
+}
+
+.temas-completos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.temas-completos li {
+  padding: 20px 0;
+  border-bottom: 2px dashed var(--gris);
+}
+.temas-completos li:last-child { border-bottom: none; }
+.temas-completos h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05em;
+  font-weight: 700;
+  color: var(--azul);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.temas-completos h4::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: var(--azul);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+.temas-completos p {
+  font-size: 0.95em;
+  color: var(--gris);
+  text-align: justify;
+  padding-left: 24px;
+  line-height: 1.6;
+}
+
+/* ============================================
    CURSOS INTERACTIVOS
    ============================================ */
 .curso-app {
@@ -533,8 +760,6 @@ body.pagina-materia {
   position: relative;
   z-index: 2;
 }
-
-/* BARRA DE PROGRESO */
 .barra-curso {
   display: flex;
   gap: 8px;
@@ -552,7 +777,6 @@ body.pagina-materia {
 .punto-progreso.activo { background: var(--azul); }
 .punto-progreso.completado { background: var(--rojo); }
 
-/* PANTALLAS */
 .pantalla {
   background: var(--crema);
   border: 3px solid var(--azul);
@@ -562,12 +786,10 @@ body.pagina-materia {
   animation: aparecer 0.4s ease;
 }
 .pantalla.activa { display: block; }
-
 @keyframes aparecer {
   from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 .pantalla h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 2.2em;
@@ -619,7 +841,6 @@ body.pagina-materia {
 .pantalla ul { margin: 15px 0 15px 25px; }
 .pantalla ul li { margin-bottom: 8px; line-height: 1.6; }
 
-/* NAVEGACIÓN */
 .navegacion {
   display: flex;
   justify-content: space-between;
@@ -645,6 +866,7 @@ body.pagina-materia {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
 }
 .btn-nav:hover {
   transform: translate(-2px, -2px);
@@ -723,7 +945,6 @@ body.pagina-materia {
   border-color: var(--rojo);
 }
 
-/* RESULTADO */
 .resultado {
   text-align: center;
   padding: 40px 30px;
@@ -762,27 +983,6 @@ body.pagina-materia {
   margin-bottom: 20px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 700px) {
-  .encabezado h1 { font-size: 2em; letter-spacing: 1px; }
-  .eslogan { font-size: 0.95em; }
-  .materias-grid { grid-template-columns: 1fr; }
-  .forma-bauhaus { display: none; }
-  .mejora-continua { padding: 30px 20px; margin: 40px 15px; }
-  .mejora-continua h2 { font-size: 1.4em; letter-spacing: 1px; }
-  .mejora-grid { grid-template-columns: 1fr; }
-  .encabezado-materia h1 { font-size: 2em; letter-spacing: 2px; }
-  .boton-volver { position: static; display: inline-flex; margin: 20px; }
-  .encabezado-materia { padding-top: 20px; }
-  .bloque-presentacion,
-  .bloque-fines { padding: 25px 20px; }
-  .curso-app { padding: 80px 15px 40px; }
-  .pantalla { padding: 30px 22px; }
-  .pantalla h1 { font-size: 1.6em; }
-  .pantalla h2 { font-size: 1.3em; }
-  .navegacion { flex-direction: column-reverse; }
-  .btn-nav { width: 100%; justify-content: center; }
-}
 /* ============================================
    CAJAS DE VIDEO E IMAGEN (cursos)
    ============================================ */
@@ -794,7 +994,6 @@ body.pagina-materia {
   border: 3px dashed var(--azul);
   position: relative;
 }
-
 .caja-video h3,
 .caja-imagen h3 {
   font-family: 'Poppins', sans-serif;
@@ -803,7 +1002,6 @@ body.pagina-materia {
   margin-bottom: 15px;
   letter-spacing: 1px;
 }
-
 .video-placeholder,
 .imagen-placeholder {
   background: var(--crema);
@@ -813,7 +1011,6 @@ body.pagina-materia {
   color: var(--gris);
   font-size: 0.9em;
 }
-
 .video-placeholder code,
 .imagen-placeholder code {
   display: block;
@@ -829,8 +1026,6 @@ body.pagina-materia {
   white-space: pre-wrap;
   word-break: break-all;
 }
-
-/* VIDEO REAL (iframe de YouTube) */
 .video-real {
   position: relative;
   padding-bottom: 56.25%;
@@ -846,8 +1041,6 @@ body.pagina-materia {
   width: 100%; height: 100%;
   border: none;
 }
-
-/* IMAGEN REAL */
 .imagen-real {
   width: 100%;
   max-width: 600px;
@@ -855,4 +1048,33 @@ body.pagina-materia {
   margin: 15px auto;
   border: 3px solid var(--negro);
   box-shadow: 6px 6px 0 var(--negro);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 700px) {
+  .encabezado h1 { font-size: 2em; letter-spacing: 1px; }
+  .eslogan { font-size: 0.95em; }
+  .materias-grid { grid-template-columns: 1fr; }
+  .forma-bauhaus { display: none; }
+  .mejora-continua { padding: 30px 20px; margin: 40px 15px; }
+  .mejora-continua h2 { font-size: 1.4em; letter-spacing: 1px; }
+  .mejora-grid { grid-template-columns: 1fr; }
+  .encabezado-materia h1 { font-size: 2em; letter-spacing: 2px; }
+  .boton-volver { position: static; display: inline-flex; margin: 20px; }
+  .encabezado-materia { padding-top: 20px; }
+  .bloque-presentacion,
+  .bloque-fines { padding: 25px 20px; }
+  .cabecera-unidad { padding: 18px 15px; gap: 12px; }
+  .numero-unidad { width: 50px; height: 50px; font-size: 1.5em; }
+  .titulo-unidad h3 { font-size: 1em; }
+  .tarjeta-unidad.abierta .contenido-desplegable { padding: 15px; }
+  .temas-completos h4 { font-size: 0.95em; }
+  .curso-app { padding: 80px 15px 40px; }
+  .pantalla { padding: 30px 22px; }
+  .pantalla h1 { font-size: 1.6em; }
+  .pantalla h2 { font-size: 1.3em; }
+  .navegacion { flex-direction: column-reverse; }
+  .btn-nav { width: 100%; justify-content: center; }
 }
