@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso 1: El derecho internacional de los DDHH</title>
+  <link rel="stylesheet" href="../../../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-materia">
+
+  <div class="forma-bauhaus circulo-rojo"></div>
+  <div class="forma-bauhaus cuadrado-azul"></div>
+  <div class="forma-bauhaus triangulo-amarillo"></div>
+
+  <a href="../index.html" class="boton-volver">
+    <span class="flecha-volver"></span>
+    Volver a Cursos
+  </a>
+
+  <div class="curso-app">
+
+    <!-- BARRA DE PROGRESO -->
+    <div class="barra-curso" id="barraCurso"></div>
+
+    <!-- PANTALLA 1: BIENVENIDA -->
+    <div class="pantalla activa" data-pantalla="0">
+      <h1>CURSO 1</h1>
+      <p class="subtitulo">El derecho internacional de los derechos humanos</p>
+      <h2>Bienvenido al curso</h2>
+      <p>En este curso aprenderás cómo los <strong>derechos humanos</strong> dejaron de ser un asunto interno de cada país para convertirse en un tema central del <strong>derecho internacional</strong>.</p>
+
+      <div class="caja-dato">
+        <strong>🎯 Objetivo:</strong> Comprender las dimensiones cultural, histórica, filosófica y jurídica de los derechos humanos.
+      </div>
+
+      <p><strong>Contenido:</strong></p>
+      <ul>
+        <li>1.1 Ingreso de los DDHH al Derecho Internacional</li>
+        <li>1.2 Sociedad de Naciones</li>
+        <li>1.3 Organización de las Naciones Unidas</li>
+        <li>1.4 Órganos de la ONU</li>
+        <li>1.5 Tribunal Penal Internacional</li>
+        <li>1.6 Carta Internacional de Derechos Humanos</li>
+      </ul>
+
+      <div class="navegacion">
+        <span class="contador">Pantalla 1 de 8</span>
+        <button class="btn-nav btn-siguiente" onclick="siguiente()">Comenzar →</button>
+      </div>
+    </div>
+
+    <!-- PANTALLA 2: TEMA 1.1 -->
+    <div class="pantalla" data-pantalla="1">
+      <p class="subtitulo">Tema 1.1</p>
+      <h2>Ingreso de los DDHH al Derecho Internacional</h2>
+
+      <p>Antes del siglo XX, los derechos humanos eran un <strong>asunto interno</strong> de cada Estado. Tras la Segunda Guerra Mundial y el Holocausto, la humanidad comprendió que la dignidad humana <strong>trasciende las fronteras</strong>.</p>
+
+      <!-- VIDEO -->
+      <div class="caja-video">
+        <h3>🎥 Video recomendado</h3>
+        <div class="video-placeholder">
+          <p><strong>Aquí va el video de YouTube</strong></p>
+          <p>Reemplaza este bloque con el iframe de tu video:</p>
+          <code>&lt;iframe src="https://www.youtube.com/embed/TU_ID" ...&gt;&lt;/iframe&gt;</code>
+        </div>
+      </div>
+
+      <!-- IMAGEN -->
+      <div class="caja-imagen">
+        <h3>🖼️ Imagen de apoyo</h3>
+        <div class="imagen-placeholder">
+          <p><strong>Aquí va la imagen</strong> (estilo Bauhaus / Art Déco)</p>
+          <p>Reemplaza con:</p>
+          <code>&lt;img src="imagen.jpg" alt="..."&gt;</code>
+        </div>
+      </div>
+
+      <div class="navegacion">
+        <button class="btn-nav" onclick="anterior()">← Anterior</button>
+        <span class="contador">Pantalla 2 de 8</span>
+        <button class="btn-nav btn-siguiente" onclick="siguiente()">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- PANTALLA 3: TEMA 1.2 -->
+    <div class="pantalla" data-pantalla="2">
+      <p class="subtitulo">Tema 1.2</p>
+      <h2>Sociedad de Naciones</h2>
+
+      <p>La <strong>Sociedad de Naciones</strong> (SDN) fue creada en 1919 tras la Primera Guerra Mundial. Fue el primer intento de organización internacional permanente para mantener la paz.</p>
+
+      <div class="caja-dato">
+        <strong>⚠️ Limitación:</strong> Fracasó al no poder evitar la Segunda Guerra Mundial.
+      </div>
+
+      <div class="caja-video">
+        <h3>🎥 Video recomendado</h3>
+        <div class="video-placeholder">
+          <p><strong>Aquí va el video de YouTube</strong></p>
+          <code>&lt;iframe src="https://www.youtube.com/embed/TU_ID" ...&gt;&lt;/iframe&gt;</code>
+        </div>
+      </div>
+
+      <div class="caja-imagen">
+        <h3>🖼️ Imagen de apoyo</h3>
+        <div class="imagen-placeholder">
+          <p><strong>Aquí va la imagen</strong></p>
+        </div>
+      </div>
+
+      <div class="navegacion">
+        <button class="btn-nav" onclick="anterior()">← Anterior</button>
+        <span class="contador">Pantalla 3 de 8</span>
+        <button class="btn-nav btn-siguiente" onclick="siguiente()">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- PANTALLA 4: TEMA 1.3 -->
+    <div class="pantalla" data-pantalla="3">
+      <p class="subtitulo">Tema 1.3</p>
+      <h2>Organización de las Naciones Unidas</h2>
+
+      <p>La <strong>ONU</strong> fue fundada el <strong>24 de octubre de 1945</strong> con la firma de la Carta de las Naciones Unidas en San Francisco. Su objetivo es mantener la paz y promover los derechos humanos.</p>
+
+      <div class="caja-dato">
+        <strong>📌 Actualmente:</strong> 193 Estados miembros. Sede en Nueva York.
+      </div>
+
+      <div class="caja-video">
+        <h3>🎥 Video recomendado</h3>
+        <div class="video-placeholder">
+          <p><strong>Aquí va el video de YouTube</strong></p>
+        </div>
+      </div>
+
+      <div class="caja-imagen">
+        <h3>🖼️ Imagen de apoyo</h3>
+        <div class="imagen-placeholder">
+          <p><strong>Aquí va la imagen</strong></p>
+        </div>
+      </div>
+
+      <div class="navegacion">
+        <button class="btn-nav" onclick="anterior()">← Anterior</button>
+        <span class="contador">Pantalla 4 de 8</span>
+        <button class="btn-nav btn-siguiente" onclick="siguiente()">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- PANTALLA 5: TEMA 1.4 -->
+    <div class="pantalla" data-pantalla="4">
+      <p class="subtitulo">Tema 1.4</p>
+      <h2>Órganos de la ONU en DDHH</h2>
+
+      <p><strong>1.4.1 Alto Comisionado de la ONU para los DDHH</strong></p>
+      <p>Creado en <strong>1993</strong>. Principal autoridad de la ONU en materia de derechos humanos.</p>
+
+      <p><strong>1.4.2 Consejo de Derechos Humanos</strong></p>
+      <p>Creado en <strong>2006</strong>. Compuesto por <strong>47 Estados</strong>. Realiza el Examen Periódico Universal (EPU).</p>
+
+      <div class="caja-video">
+        <h3>🎥 Video recomendado</h3>
+        <div class="video-placeholder">
+          <p><strong>Aquí va el video de YouTube</strong></p>
+        </div>
+      </div>
+
+      <div class="navegacion">
+        <button class="btn-nav" onclick="anterior()">← Anterior</button>
+        <span class="contador">Pantalla 5 de 8</span>
+        <button class="btn-nav btn-siguiente" onclick="siguiente()">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- PANTALLA 6: TEMA 1.5 -->
+    <div class="pantalla" data-pantalla="5">
+      <p class="subtitulo">Tema 1.5</p>
+      <h2>Tribunal Penal Internacional</h2>
+
+      <p>El <strong>TPI</strong> fue establecido por el Estatuto de Roma en <strong>1998</strong>, entró en vigor en <strong>2002</strong>. Sede en La Haya.</p>
+
+      <p>Juzga cuatro crímenes:</p>
+      <ul>
+        <li>Genocidio</li>
+        <li>Lesa humanidad</li>
+        <li>Crímenes de guerra</li>
+        <li>Agresión</li>
+      </ul>
+
+      <div class="caja-dato">
+        <strong>⚖️ Es complementario:</strong> Solo actúa cuando los países no pueden o no quieren juzgar.
+      </div>
+
+      <div class="caja-video">
+        <h3>🎥 Video recomendado</h3>
+        <div class="video-placeholder">
+          <p><strong>Aquí va el video de YouTube</strong></p>
+        </div>
+      </div>
+
+      <div class="navegacion">
+        <button class="btn-nav" onclick="anterior()">← Anterior</button>
+        <span class="contador">Pantalla 6 de 8</span>
+        <button class="btn-nav btn-siguiente" onclick="siguiente()">Siguiente →</button>
+      </div>
+    </div>
+
+    <!-- PANTALLA 7: TEMA 1.6 -->
+    <div class="pantalla" data-pantalla="6">
+      <p class="subtitulo">Tema 1.6</p>
+      <h2>Carta Internacional de DDHH</h2>
+
+      <p><strong>1.6.1 Declaración Universal (DUDH)</strong> — 1948, 30 artículos.</p>
+      <p><strong>1.6.2 PIDCP</strong> — 1966, con Protocolo Facultativo.</p>
+      <p><strong>1.6.3 PIDESC</strong> — 1966, con Protocolo Facultativo (2008).</p>
+
+      <div class="caja-dato">
+        <strong>📚 Dato:</strong> La DUDH es el documento más traducido del mundo: +500 idiomas.
+      </div>
+
+      <div class="caja-video">
+        <h3>🎥 Video recomendado</h3>
+        <div class="video-placeholder">
+          <p><strong>Aquí va el video de YouTube</strong></p>
+        </div>
+      </div>
+
+      <div class="navegacion">
+        <button class="btn-nav" onclick="anterior()">← Anterior</button>
+        <span class="contador">Pantalla 7 de 8</span>
+        <button class="btn-nav btn-siguiente btn-finalizar" onclick="irAEvaluacion()">Ir a la evaluación →</button>
+      </div>
+    </div>
+
+    <!-- PANTALLA 8: EVALUACIÓN -->
+    <div class="pantalla" data-pantalla="7">
+      <p class="subtitulo">Evaluación final</p>
+      <h2>Pon a prueba tu conocimiento</h2>
+      <p>Responde las siguientes <strong>10 preguntas</strong>. Necesitas <strong>7 aciertos o más</strong> para aprobar.</p>
+      <div class="caja-dato">
+        💡 <strong>Tip:</strong> Si no apruebas, podrás reintentar con preguntas diferentes.
+      </div>
+
+      <div id="contenedorPreguntas"></div>
+
+      <div class="navegacion">
+        <span class="contador" id="contadorPreguntas">0 / 10 respondidas</span>
+        <button class="btn-nav btn-siguiente btn-finalizar" onclick="calificar()">Calificar examen</button>
+      </div>
+    </div>
+
+    <!-- PANTALLA 9: RESULTADO -->
+    <div class="pantalla" data-pantalla="8">
+      <div class="resultado" id="resultadoFinal"></div>
+      <div class="navegacion">
+        <button class="btn-nav" onclick="reiniciarCurso()">↺ Reiniciar curso</button>
+        <button class="btn-nav btn-siguiente" onclick="reintentarEvaluacion()">🔄 Reintentar evaluación</button>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="pie-pagina">
+    <div class="linea-bauhaus">
+      <span class="franja roja"></span>
+      <span class="franja azul"></span>
+      <span class="franja amarilla"></span>
+    </div>
+    <p>© 2026 Aula Moyocoyani · Derecho · Curso 1</p>
+  </footer>
+
+  <script>
+    /* ============================================
+       BANCO DE PREGUNTAS (30 total, se toman 10)
+       ============================================ */
+    const bancoPreguntas = [
+      { p: "¿En qué año se creó la Sociedad de Naciones?", r: ["1919", "1945", "1948", "1920"], c: 0 },
+      { p: "¿En qué año se fundó la ONU?", r: ["1919", "1945", "1948", "1966"], c: 1 },
+      { p: "¿Cuántos artículos tiene la DUDH?", r: ["20", "25", "30", "40"], c: 2 },
+      { p: "¿En qué año se adoptó la DUDH?", r: ["1945", "1948", "1950", "1966"], c: 1 },
+      { p: "¿Dónde está la sede del TPI?", r: ["Nueva York", "Ginebra", "La Haya", "París"], c: 2 },
+      { p: "¿Cuántos Estados tiene el Consejo de DDHH?", r: ["30", "40", "47", "53"], c: 2 },
+      { p: "¿En qué año se creó el Consejo de DDHH?", r: ["1993", "2000", "2006", "2010"], c: 2 },
+      { p: "¿Cuál es el documento más traducido del mundo?", r: ["La Biblia", "La DUDH", "La Constitución de EUA", "La Carta de la ONU"], c: 1 },
+      { p: "¿Qué significa EPU?", r: ["Examen Periódico Universal", "Estudio de Políticas Unidas", "Evaluación Pública Unificada", "Examen Preliminar Único"], c: 0 },
+      { p: "¿En qué año entró en vigor el Estatuto de Roma?", r: ["1998", "2000", "2002", "2005"], c: 2 },
+      { p: "¿Qué órgano reemplazó la Comisión de DDHH?", r: ["El Alto Comisionado", "El Consejo de DDHH", "El Comité de DDHH", "La Corte IDH"], c: 1 },
+      { p: "¿Qué organismo fue el primer intento de organización internacional?", r: ["La ONU", "La Sociedad de Naciones", "La OEA", "La Unión Europea"], c: 1 },
+      { p: "¿En qué año se creó el Alto Comisionado de la ONU para DDHH?", r: ["1948", "1966", "1993", "2006"], c: 2 },
+      { p: "¿Qué tratado creó el TPI?", r: ["Carta de la ONU", "Estatuto de Roma", "Tratado de Versalles", "Pacto de San José"], c: 1 },
+      { p: "¿Cuál de estos NO es un crimen que juzga el TPI?", r: ["Genocidio", "Lesa humanidad", "Crímenes de guerra", "Fraude fiscal"], c: 3 },
+      { p: "¿Cuándo entró en vigor el PIDCP?", r: ["1948", "1966", "1976", "1980"], c: 2 },
+      { p: "¿Cuándo se adoptó el PIDESC?", r: ["1948", "1966", "1976", "2008"], c: 1 },
+      { p: "¿Cuál es la sede de la ONU?", r: ["Ginebra", "Nueva York", "La Haya", "París"], c: 1 },
+      { p: "¿Qué significa DUDH?", r: ["Declaración Universal de Derechos Humanos", "Documento Único de DDHH", "Declaración Unida de Derechos", "Derechos Universales del Hombre"], c: 0 },
+      { p: "¿Qué significa PIDCP?", r: ["Pacto Internacional de Derechos Civiles y Políticos", "Programa Internacional de DDHH", "Plan de Derechos Constitucionales", "Pacto Interno de DDHH"], c: 0 },
+      { p: "¿Qué significa PIDESC?", r: ["Pacto Internacional de Derechos Económicos, Sociales y Culturales", "Plan Internacional de Educación", "Programa de DDHH Sociales", "Pacto de Derechos Escolares"], c: 0 },
+      { p: "¿Qué presidente impulsó la Sociedad de Naciones?", r: ["Roosevelt", "Wilson", "Truman", "Kennedy"], c: 1 },
+      { p: "¿En qué ciudad se firmó la Carta de la ONU?", r: ["Nueva York", "Ginebra", "San Francisco", "París"], c: 2 },
+      { p: "¿Cuándo se celebra el Día de los Derechos Humanos?", r: ["10 de diciembre", "24 de octubre", "1 de mayo", "5 de junio"], c: 0 },
+      { p: "¿Cuál es el órgano principal de la ONU en DDHH desde 2006?", r: ["La Asamblea General", "El Consejo de DDHH", "El Consejo de Seguridad", "La Corte Internacional"], c: 1 },
+      { p: "¿Cuándo se disolvió la Sociedad de Naciones?", r: ["1939", "1945", "1946", "1948"], c: 2 },
+      { p: "¿Cuál de estos países NO es miembro permanente del Consejo de Seguridad?", r: ["EE.UU.", "Rusia", "China", "Alemania"], c: 3 },
+      { p: "¿Qué tipo de documento es la DUDH?", r: ["Tratado vinculante", "Declaración no vinculante", "Constitución", "Reglamento"], c: 1 },
+      { p: "¿Qué organismo se encarga del EPU?", r: ["El Consejo de DDHH", "La Corte IDH", "El TPI", "La UNESCO"], c: 0 },
+      { p: "¿Qué significa ONU?", r: ["Organización de Naciones Unidas", "Organización Nueva Universal", "Organismo Nacional Único", "Organización Neutral Universal"], c: 0 }
+    ];
+
+    let pantallaActual = 0;
+    let preguntasSeleccionadas = [];
+    let respuestasUsuario = [];
+
+    /* ============================================
+       NAVEGACIÓN ENTRE PANTALLAS
+       ============================================ */
+    function mostrarPantalla(n) {
+      const pantallas = document.querySelectorAll('.pantalla');
+      pantallas.forEach(p => p.classList.remove('activa'));
+      pantallas[n].classList.add('activa');
+      pantallaActual = n;
+      actualizarBarra();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function siguiente() {
+      if (pantallaActual < 7) mostrarPantalla(pantallaActual + 1);
+    }
+
+    function anterior() {
+      if (pantallaActual > 0) mostrarPantalla(pantallaActual - 1);
+    }
+
+    function irAEvaluacion() {
+      generarPreguntas();
+      mostrarPantalla(7);
+    }
+
+    /* ============================================
+       BARRA DE PROGRESO
+       ============================================ */
+    function actualizarBarra() {
+      const barra = document.getElementById('barraCurso');
+      barra.innerHTML = '';
+      for (let i = 0; i < 9; i++) {
+        const punto = document.createElement('div');
+        punto.className = 'punto-progreso';
+        if (i < pantallaActual) punto.classList.add('completado');
+        if (i === pantallaActual) punto.classList.add('activo');
+        barra.appendChild(punto);
+      }
+    }
+
+    /* ============================================
+       EVALUACIÓN: GENERAR 10 PREGUNTAS ALEATORIAS
+       ============================================ */
+    function generarPreguntas() {
+      // Mezclar el banco y tomar 10
+      const mezclado = [...bancoPreguntas].sort(() => Math.random() - 0.5);
+      preguntasSeleccionadas = mezclado.slice(0, 10);
+      respuestasUsuario = new Array(10).fill(null);
+
+      const contenedor = document.getElementById('contenedorPreguntas');
+      contenedor.innerHTML = '';
+
+      preguntasSeleccionadas.forEach((preg, i) => {
+        const div = document.createElement('div');
+        div.className = 'pregunta';
+        div.innerHTML = `
+          <div class="pregunta-texto">${i + 1}. ${preg.p}</div>
+          <div class="opciones" data-pregunta="${i}">
+            ${preg.r.map((op, j) => `
+              <div class="opcion" onclick="seleccionarOpcion(${i}, ${j}, this)">
+                ${op}
+              </div>
+            `).join('')}
+          </div>
+        `;
+        contenedor.appendChild(div);
+      });
+
+      actualizarContador();
+    }
+
+    function seleccionarOpcion(pregunta, opcion, elemento) {
+      // Quitar selección previa
+      const opciones = elemento.parentElement.querySelectorAll('.opcion');
+      opciones.forEach(o => o.classList.remove('seleccionada'));
+      elemento.classList.add('seleccionada');
+      respuestasUsuario[pregunta] = opcion;
+      actualizarContador();
+    }
+
+    function actualizarContador() {
+      const contestadas = respuestasUsuario.filter(r => r !== null).length;
+      document.getElementById('contadorPreguntas').textContent = `${contestadas} / 10 respondidas`;
+    }
+
+    /* ============================================
+       CALIFICAR
+       ============================================ */
+    function calificar() {
+      // Verificar que todas estén contestadas
+      const sinContestar = respuestasUsuario.filter(r => r === null).length;
+      if (sinContestar > 0) {
+        alert(`Te faltan ${sinContestar} preguntas por contestar.`);
+        return;
+      }
+
+      // Calificar
+      let aciertos = 0;
+      preguntasSeleccionadas.forEach((preg, i) => {
+        if (respuestasUsuario[i] === preg.c) aciertos++;
+      });
+
+      const porcentaje = Math.round((aciertos / 10) * 100);
+      const aprobado = aciertos >= 7;
+
+      // Mostrar resultado
+      const resultado = document.getElementById('resultadoFinal');
+      resultado.className = 'resultado ' + (aprobado ? 'aprobado' : 'reprobado');
+      resultado.innerHTML = `
+        <div class="icono-resultado">${aprobado ? '✓' : '✗'}</div>
+        <h2>${aprobado ? '¡Aprobado!' : 'No aprobado'}</h2>
+        <div class="puntaje">${aciertos}/10</div>
+        <p><strong>${porcentaje}% de aciertos</strong></p>
+        <p>${aprobado 
+          ? '¡Felicidades! Has completado el curso exitosamente. 🎉' 
+          : 'Necesitas al menos 7 aciertos. ¡Inténtalo de nuevo con preguntas diferentes!'}</p>
+      `;
+
+      mostrarPantalla(8);
+    }
+
+    /* ============================================
+       REINTENTAR / REINICIAR
+       ============================================ */
+    function reintentarEvaluacion() {
+      generarPreguntas();
+      mostrarPantalla(7);
+    }
+
+    function reiniciarCurso() {
+      respuestasUsuario = [];
+      preguntasSeleccionadas = [];
+      mostrarPantalla(0);
+    }
+
+    /* ============================================
+       INICIALIZAR
+       ============================================ */
+    document.addEventListener('DOMContentLoaded', () => {
+      actualizarBarra();
+    });
+  </script>
+
+</body>
+</html>
