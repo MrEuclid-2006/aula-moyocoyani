@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cursos | Derecho</title>
+  <!-- ✅ CSS GLOBAL desde la raíz (sin redundancia) -->
   <link rel="stylesheet" href="../../style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body class="pagina-materia">
 
+  <!-- Formas Bauhaus (definidas en el CSS global) -->
   <div class="forma-bauhaus circulo-rojo"></div>
   <div class="forma-bauhaus cuadrado-azul"></div>
   <div class="forma-bauhaus triangulo-amarillo"></div>
@@ -30,58 +32,111 @@
       Cursos interactivos
     </h2>
     <p>Aquí encontrarás los cursos interactivos de la asignatura, diseñados para que aprendas a tu propio ritmo. Cada curso incluye <strong>contenido teórico, ejemplos y una evaluación final</strong> para poner a prueba tus conocimientos.</p>
-    <p>Puedes repetir la evaluación las veces que quieras: cada intento incluye preguntas nuevas para que refuerces tu aprendizaje.</p>
+    <p>Haz clic en cada curso para ver sus temas y acceder a él.</p>
   </section>
 
-  <!-- LISTADO DE CURSOS -->
   <section class="bloque-botones">
-    <h3 class="titulo-botones">Cursos disponibles</h3>
-
-    <div class="botones-grid">
+    <div class="unidades-lista">
 
       <!-- CURSO 1 - ACTIVO -->
-      <a href="curso-1/index.html" class="boton-materia boton-contenido">
-        <div class="forma-boton cuadrado-icono-boton"></div>
-        <h4>Curso 1</h4>
-        <p><strong>El derecho internacional de los derechos humanos</strong></p>
-        <p style="font-size: 0.85em; margin-top: 10px;">1.1 Ingreso de los DDHH · 1.2 Sociedad de Naciones · 1.3 ONU · 1.4 Órganos · 1.5 TPI · 1.6 Carta Internacional</p>
-        <span class="boton-entrar" style="display:inline-block; margin-top: 15px;">Iniciar curso →</span>
-      </a>
+      <div class="tarjeta-unidad tarjeta-unidad-azul">
+        <button class="cabecera-unidad">
+          <div class="numero-unidad">1</div>
+          <div class="titulo-unidad">
+            <h3>El derecho internacional de los derechos humanos</h3>
+            <span class="indicador">▼</span>
+          </div>
+        </button>
+        <div class="contenido-desplegable">
+          <ol class="temas-completos">
+            <li><h4>1.1 Ingreso de los Derechos Humanos al Derecho Internacional</h4><p>Antes del siglo XX los derechos humanos eran un asunto interno. Tras la Segunda Guerra Mundial se volvieron un tema internacional.</p></li>
+            <li><h4>1.2 Sociedad de Naciones</h4><p>Primer intento de organización internacional para mantener la paz (1919).</p></li>
+            <li><h4>1.3 Organización de las Naciones Unidas</h4><p>Creada en 1945, es el organismo internacional más importante para la protección de los derechos humanos.</p></li>
+            <li><h4>1.4 Órganos de la ONU</h4><p>Alto Comisionado de la ONU para los DDHH y Consejo de Derechos Humanos.</p></li>
+            <li><h4>1.5 Tribunal Penal Internacional</h4><p>Creado con el Estatuto de Roma (1998). Juzga genocidio, lesa humanidad, crímenes de guerra y agresión.</p></li>
+            <li><h4>1.6 Carta Internacional de Derechos Humanos</h4><p>DUDH (1948), PIDCP (1966) y PIDESC (1966) con sus protocolos facultativos.</p></li>
+          </ol>
+          <a href="curso-1/index.html" class="btn-nav btn-siguiente" style="margin-top: 20px; display: inline-block; text-decoration: none;">Iniciar curso →</a>
+        </div>
+      </div>
 
       <!-- CURSO 2 - BLOQUEADO -->
-      <div class="boton-materia" style="opacity: 0.5; cursor: not-allowed;">
-        <div class="forma-boton circulo-icono-boton"></div>
-        <h4>Curso 2</h4>
-        <p><strong>Marco jurídico internacional de los DDHH</strong></p>
-        <p style="font-size: 0.85em; margin-top: 10px;">Convenciones contra Genocidio, Discriminación Racial, Discriminación hacia la Mujer, Tortura y Comités internacionales</p>
-        <span class="boton-entrar" style="display:inline-block; margin-top: 15px;">Próximamente</span>
+      <div class="tarjeta-unidad tarjeta-unidad-rojo">
+        <button class="cabecera-unidad">
+          <div class="numero-unidad">2</div>
+          <div class="titulo-unidad">
+            <h3>Marco jurídico internacional de los derechos humanos</h3>
+            <span class="indicador">▼</span>
+          </div>
+        </button>
+        <div class="contenido-desplegable">
+          <ol class="temas-completos">
+            <li><h4>2.1 Convención contra el Genocidio</h4><p>Contenido próximamente.</p></li>
+            <li><h4>2.2 Convención contra la Discriminación Racial</h4><p>Contenido próximamente.</p></li>
+            <li><h4>2.3 Convención contra la Discriminación hacia la Mujer</h4><p>Contenido próximamente.</p></li>
+            <li><h4>2.4 Convención contra la Tortura</h4><p>Contenido próximamente.</p></li>
+            <li><h4>2.5 Comités internacionales de derechos humanos</h4><p>Contenido próximamente.</p></li>
+          </ol>
+          <span class="btn-nav" style="margin-top: 20px; display: inline-block; opacity: 0.5; cursor: not-allowed;">Próximamente</span>
+        </div>
       </div>
 
       <!-- CURSO 3 - BLOQUEADO -->
-      <div class="boton-materia" style="opacity: 0.5; cursor: not-allowed;">
-        <div class="forma-boton triangulo-icono-boton"></div>
-        <h4>Curso 3</h4>
-        <p><strong>Derechos humanos en el espacio europeo</strong></p>
-        <p style="font-size: 0.85em; margin-top: 10px;">Sistema Europeo · Tribunal Europeo de DDHH</p>
-        <span class="boton-entrar" style="display:inline-block; margin-top: 15px;">Próximamente</span>
+      <div class="tarjeta-unidad tarjeta-unidad-amarilla">
+        <button class="cabecera-unidad">
+          <div class="numero-unidad">3</div>
+          <div class="titulo-unidad">
+            <h3>Derechos humanos en el espacio europeo</h3>
+            <span class="indicador">▼</span>
+          </div>
+        </button>
+        <div class="contenido-desplegable">
+          <ol class="temas-completos">
+            <li><h4>3.1 Sistema Europeo de Derechos Humanos</h4><p>Contenido próximamente.</p></li>
+            <li><h4>3.2 Tribunal Europeo de Derechos Humanos</h4><p>Contenido próximamente.</p></li>
+          </ol>
+          <span class="btn-nav" style="margin-top: 20px; display: inline-block; opacity: 0.5; cursor: not-allowed;">Próximamente</span>
+        </div>
       </div>
 
       <!-- CURSO 4 - BLOQUEADO -->
-      <div class="boton-materia" style="opacity: 0.5; cursor: not-allowed;">
-        <div class="forma-boton cuadrado-icono-boton"></div>
-        <h4>Curso 4</h4>
-        <p><strong>Sistema Interamericano de los DDHH</strong></p>
-        <p style="font-size: 0.85em; margin-top: 10px;">OEA · Declaración Americana · Comisión IDH · Corte IDH · Jurisprudencia · Procedimientos</p>
-        <span class="boton-entrar" style="display:inline-block; margin-top: 15px;">Próximamente</span>
+      <div class="tarjeta-unidad tarjeta-unidad-azul">
+        <button class="cabecera-unidad">
+          <div class="numero-unidad">4</div>
+          <div class="titulo-unidad">
+            <h3>Sistema Interamericano de los Derechos Humanos</h3>
+            <span class="indicador">▼</span>
+          </div>
+        </button>
+        <div class="contenido-desplegable">
+          <ol class="temas-completos">
+            <li><h4>4.1 Organización de Estados Americanos</h4><p>Contenido próximamente.</p></li>
+            <li><h4>4.2 Declaración Americana de los Derechos del Hombre</h4><p>Contenido próximamente.</p></li>
+            <li><h4>4.3 Comisión Interamericana de Derechos Humanos</h4><p>Contenido próximamente.</p></li>
+            <li><h4>4.4 Corte Interamericana de Derechos Humanos</h4><p>Contenido próximamente.</p></li>
+            <li><h4>4.5 Jurisprudencia y resoluciones de la Corte IDH</h4><p>Contenido próximamente.</p></li>
+            <li><h4>4.6 Procedimientos ante la Corte IDH</h4><p>Contenido próximamente.</p></li>
+          </ol>
+          <span class="btn-nav" style="margin-top: 20px; display: inline-block; opacity: 0.5; cursor: not-allowed;">Próximamente</span>
+        </div>
       </div>
 
       <!-- CURSO 5 - BLOQUEADO -->
-      <div class="boton-materia" style="opacity: 0.5; cursor: not-allowed;">
-        <div class="forma-boton circulo-icono-boton"></div>
-        <h4>Curso 5</h4>
-        <p><strong>Sistema Africano de Derechos Humanos</strong></p>
-        <p style="font-size: 0.85em; margin-top: 10px;">Sistema africano · Corte Africana de DDHH y de los Pueblos</p>
-        <span class="boton-entrar" style="display:inline-block; margin-top: 15px;">Próximamente</span>
+      <div class="tarjeta-unidad tarjeta-unidad-rojo">
+        <button class="cabecera-unidad">
+          <div class="numero-unidad">5</div>
+          <div class="titulo-unidad">
+            <h3>Sistema Africano de Derechos Humanos</h3>
+            <span class="indicador">▼</span>
+          </div>
+        </button>
+        <div class="contenido-desplegable">
+          <ol class="temas-completos">
+            <li><h4>5.1 Sistema africano</h4><p>Contenido próximamente.</p></li>
+            <li><h4>5.6 Corte Africana de Derechos Humanos y de los Pueblos</h4><p>Contenido próximamente.</p></li>
+          </ol>
+          <span class="btn-nav" style="margin-top: 20px; display: inline-block; opacity: 0.5; cursor: not-allowed;">Próximamente</span>
+        </div>
       </div>
 
     </div>
@@ -95,6 +150,19 @@
     </div>
     <p>© 2026 Aula Moyocoyani · Derecho · Cursos</p>
   </footer>
+
+  <!-- ✅ JS GLOBAL desde la raíz -->
+  <script src="../../../script.js"></script>
+
+  <!-- Script local: solo el toggle del acordeón -->
+  <script>
+    document.querySelectorAll('.cabecera-unidad').forEach(boton => {
+      boton.addEventListener('click', () => {
+        const tarjeta = boton.closest('.tarjeta-unidad');
+        tarjeta.classList.toggle('abierta');
+      });
+    });
+  </script>
 
 </body>
 </html>
