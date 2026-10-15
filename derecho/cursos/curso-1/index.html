@@ -166,7 +166,7 @@
 
       <div class="caja-dato">
         <label for="nombreEstudiante" style="font-weight: 600; display: block; margin-bottom: 8px;">Nombre completo del estudiante:</label>
-        <input type="text" id="nombreEstudiante" placeholder="Escribe tu nombre aquí" style="width: 100%; padding: 12px; border: 2px solid var(--negro); background: var(--crema); font-family: 'Inter', sans-serif; font-size: 1em;">
+        <input type="text" id="nombreEstudiante" placeholder="Escribe tu nombre aquí" style="width: 100%; padding: 12px; border: 2px solid #1A1A1A; background: #F4ECD8; font-family: 'Inter', sans-serif; font-size: 1em;">
       </div>
 
       <div id="contenedorPreguntas"></div>
@@ -197,11 +197,9 @@
     <p>© 2026 Aula Moyocoyani · Derecho · Curso 1</p>
   </footer>
 
-  <!-- html2canvas para capturas -->
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
   <script>
-    /* BANCO DE PREGUNTAS */
     const bancoPreguntas = [
       { p: "¿En qué año se creó la Sociedad de Naciones?", r: ["1919", "1945", "1948", "1920"], c: 0 },
       { p: "¿En qué año se fundó la ONU?", r: ["1919", "1945", "1948", "1966"], c: 1 },
@@ -314,21 +312,18 @@
     }
 
     async function calificar() {
-      // Validar nombre
       const nombre = document.getElementById('nombreEstudiante').value.trim();
       if (!nombre) {
         alert('Por favor, escribe tu nombre antes de calificar.');
         return;
       }
 
-      // Validar que todas estén contestadas
       const sinContestar = respuestasUsuario.filter(r => r === null).length;
       if (sinContestar > 0) {
         alert(`Te faltan ${sinContestar} preguntas por contestar.`);
         return;
       }
 
-      // Calificar
       let aciertos = 0;
       preguntasSeleccionadas.forEach((preg, i) => {
         if (respuestasUsuario[i] === preg.c) aciertos++;
@@ -337,14 +332,12 @@
       const porcentaje = Math.round((aciertos / 10) * 100);
       const aprobado = aciertos >= 7;
 
-      // Fecha
       const fecha = new Date();
       const fechaTexto = fecha.toLocaleString('es-MX', {
         day: '2-digit', month: '2-digit', year: 'numeric',
         hour: '2-digit', minute: '2-digit'
       });
 
-      // Mostrar resultado
       const resultado = document.getElementById('resultadoFinal');
       resultado.className = 'resultado ' + (aprobado ? 'aprobado' : 'reprobado');
       resultado.innerHTML = `
@@ -352,25 +345,17 @@
         <h2>${aprobado ? '¡Aprobado!' : 'No aprobado'}</h2>
         <div class="puntaje">${aciertos}/10</div>
         <p><strong>${porcentaje}% de aciertos</strong></p>
-        <p>${aprobado 
-          ? '¡Felicidades! Has completado el curso exitosamente.' 
-          : 'Necesitas al menos 7 aciertos. Inténtalo de nuevo con preguntas diferentes.'}</p>
-        <p style="margin-top: 20px; font-size: 0.9em; color: var(--gris);">
-          Generando imagen de tu examen para enviar al profesor...
-        </p>
+        <p>${aprobado ? '¡Felicidades! Has completado el curso exitosamente.' : 'Necesitas al menos 7 aciertos. Inténtalo de nuevo con preguntas diferentes.'}</p>
+        <p style="margin-top: 20px; font-size: 0.9em; color: #5C5C5C;">Generando imagen de tu examen para enviar al profesor...</p>
       `;
 
       mostrarPantalla(8);
 
-      // Esperar un momento para que se renderice
       await new Promise(resolve => setTimeout(resolve, 500));
-
-      // Generar imagen del examen respondido
       generarImagenExamen(nombre, fechaTexto, aciertos, porcentaje, aprobado);
     }
 
     async function generarImagenExamen(nombre, fechaTexto, aciertos, porcentaje, aprobado) {
-      // Crear un contenedor temporal con toda la info del examen
       const contenedorImagen = document.createElement('div');
       contenedorImagen.style.position = 'fixed';
       contenedorImagen.style.left = '-9999px';
@@ -382,15 +367,12 @@
       contenedorImagen.style.color = '#1A1A1A';
       contenedorImagen.style.lineHeight = '1.6';
 
-      // Construir HTML
       let htmlExamen = `
         <div style="text-align:center; border-bottom: 4px solid #1B3A6B; padding-bottom: 20px; margin-bottom: 30px;">
           <h1 style="font-family:'Poppins',sans-serif; font-size: 2.5em; color: #1B3A6B; letter-spacing: 3px; margin-bottom: 10px;">AULA MOYOCOYANI</h1>
           <p style="font-size: 1.1em; color: #5C5C5C; font-style: italic;">Aprender es crear. Enseñar es inspirar.</p>
         </div>
-
         <h2 style="font-family:'Poppins',sans-serif; font-size: 1.6em; color: #1B3A6B; margin-bottom: 15px;">Examen: Curso 1 — El derecho internacional de los DDHH</h2>
-
         <table style="width: 100%; margin-bottom: 30px; border-collapse: collapse;">
           <tr>
             <td style="padding: 10px; background: #E8DCC0; border: 2px solid #1B3A6B; font-weight: 600; width: 30%;">Estudiante:</td>
@@ -407,17 +389,13 @@
             </td>
           </tr>
         </table>
-
         <h3 style="font-family:'Poppins',sans-serif; font-size: 1.2em; color: #1B3A6B; margin-bottom: 15px; border-left: 6px solid #E3B505; padding-left: 12px;">Respuestas del examen</h3>
       `;
 
       preguntasSeleccionadas.forEach((preg, i) => {
-        const respCorrecta = preg.c;
-        const respUsuarioIdx = respuestasUsuario[i];
-        const esCorrecta = respUsuarioIdx === respCorrecta;
-        const textoUsuario = preg.r[respUsuarioIdx];
-        const textoCorrecto = preg.r[respCorrecta];
-
+        const esCorrecta = respuestasUsuario[i] === preg.c;
+        const textoUsuario = preg.r[respuestasUsuario[i]];
+        const textoCorrecto = preg.r[preg.c];
         htmlExamen += `
           <div style="margin-bottom: 20px; padding: 15px; background: ${esCorrecta ? '#E8F5E9' : '#FBE9E7'}; border-left: 5px solid ${esCorrecta ? '#4CAF50' : '#C1440E'};">
             <p style="font-weight: 600; margin-bottom: 8px;">${i + 1}. ${preg.p}</p>
@@ -433,40 +411,27 @@
       htmlExamen += `
         <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 3px solid #1B3A6B;">
           <p style="font-size: 0.9em; color: #5C5C5C;">Documento generado automáticamente · Aula Moyocoyani © 2026</p>
-          <p style="font-size: 0.85em; color: #5C5C5C; margin-top: 5px;">Este examen debe ser enviado al profesor para su registro.</p>
         </div>
       `;
 
       contenedorImagen.innerHTML = htmlExamen;
       document.body.appendChild(contenedorImagen);
 
-      // Esperar un poco para que se renderice
       await new Promise(resolve => setTimeout(resolve, 300));
 
-      // Capturar con html2canvas
       try {
         const canvas = await html2canvas(contenedorImagen, {
-          scale: 2,
-          useCORS: true,
-          backgroundColor: '#F4ECD8',
-          logging: false
+          scale: 2, useCORS: true, backgroundColor: '#F4ECD8', logging: false
         });
-
-        // Convertir a PNG y descargar
         const link = document.createElement('a');
         const nombreArchivo = `Examen_${nombre.replace(/\s+/g, '_')}_${new Date().toISOString().slice(0,10)}.png`;
         link.download = nombreArchivo;
         link.href = canvas.toDataURL('image/png');
         link.click();
-
-        // Limpiar
         document.body.removeChild(contenedorImagen);
-
-        // Aviso al usuario
         setTimeout(() => {
-          alert('¡Examen calificado!\n\nSe ha descargado automáticamente la imagen de tu examen. Envíasela a tu profesor por el medio acordado.');
+          alert('¡Examen calificado!\n\nSe ha descargado automáticamente la imagen de tu examen. Envíasela a tu profesor.');
         }, 500);
-
       } catch (error) {
         console.error('Error al generar la imagen:', error);
         document.body.removeChild(contenedorImagen);
