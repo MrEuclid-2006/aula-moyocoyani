@@ -4,13 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cursos | Derecho</title>
-  <!-- ✅ CSS GLOBAL desde la raíz (sin redundancia) -->
   <link rel="stylesheet" href="../../style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body class="pagina-materia">
 
-  <!-- Formas Bauhaus (definidas en el CSS global) -->
   <div class="forma-bauhaus circulo-rojo"></div>
   <div class="forma-bauhaus cuadrado-azul"></div>
   <div class="forma-bauhaus triangulo-amarillo"></div>
@@ -40,7 +38,7 @@
 
       <!-- CURSO 1 - ACTIVO -->
       <div class="tarjeta-unidad tarjeta-unidad-azul">
-        <button class="cabecera-unidad">
+        <button class="cabecera-unidad" type="button">
           <div class="numero-unidad">1</div>
           <div class="titulo-unidad">
             <h3>El derecho internacional de los derechos humanos</h3>
@@ -56,13 +54,15 @@
             <li><h4>1.5 Tribunal Penal Internacional</h4><p>Creado con el Estatuto de Roma (1998). Juzga genocidio, lesa humanidad, crímenes de guerra y agresión.</p></li>
             <li><h4>1.6 Carta Internacional de Derechos Humanos</h4><p>DUDH (1948), PIDCP (1966) y PIDESC (1966) con sus protocolos facultativos.</p></li>
           </ol>
-          <a href="curso-1/index.html" class="btn-nav btn-siguiente" style="margin-top: 20px; display: inline-block; text-decoration: none;">Iniciar curso →</a>
+          <div style="margin-top: 20px;">
+            <a href="curso-1/index.html" class="btn-nav btn-siguiente" style="text-decoration: none;">Iniciar curso →</a>
+          </div>
         </div>
       </div>
 
       <!-- CURSO 2 - BLOQUEADO -->
       <div class="tarjeta-unidad tarjeta-unidad-rojo">
-        <button class="cabecera-unidad">
+        <button class="cabecera-unidad" type="button">
           <div class="numero-unidad">2</div>
           <div class="titulo-unidad">
             <h3>Marco jurídico internacional de los derechos humanos</h3>
@@ -77,13 +77,15 @@
             <li><h4>2.4 Convención contra la Tortura</h4><p>Contenido próximamente.</p></li>
             <li><h4>2.5 Comités internacionales de derechos humanos</h4><p>Contenido próximamente.</p></li>
           </ol>
-          <span class="btn-nav" style="margin-top: 20px; display: inline-block; opacity: 0.5; cursor: not-allowed;">Próximamente</span>
+          <div style="margin-top: 20px;">
+            <span class="btn-nav" style="opacity: 0.5; cursor: not-allowed;">Próximamente</span>
+          </div>
         </div>
       </div>
 
       <!-- CURSO 3 - BLOQUEADO -->
       <div class="tarjeta-unidad tarjeta-unidad-amarilla">
-        <button class="cabecera-unidad">
+        <button class="cabecera-unidad" type="button">
           <div class="numero-unidad">3</div>
           <div class="titulo-unidad">
             <h3>Derechos humanos en el espacio europeo</h3>
@@ -95,13 +97,15 @@
             <li><h4>3.1 Sistema Europeo de Derechos Humanos</h4><p>Contenido próximamente.</p></li>
             <li><h4>3.2 Tribunal Europeo de Derechos Humanos</h4><p>Contenido próximamente.</p></li>
           </ol>
-          <span class="btn-nav" style="margin-top: 20px; display: inline-block; opacity: 0.5; cursor: not-allowed;">Próximamente</span>
+          <div style="margin-top: 20px;">
+            <span class="btn-nav" style="opacity: 0.5; cursor: not-allowed;">Próximamente</span>
+          </div>
         </div>
       </div>
 
       <!-- CURSO 4 - BLOQUEADO -->
       <div class="tarjeta-unidad tarjeta-unidad-azul">
-        <button class="cabecera-unidad">
+        <button class="cabecera-unidad" type="button">
           <div class="numero-unidad">4</div>
           <div class="titulo-unidad">
             <h3>Sistema Interamericano de los Derechos Humanos</h3>
@@ -117,13 +121,15 @@
             <li><h4>4.5 Jurisprudencia y resoluciones de la Corte IDH</h4><p>Contenido próximamente.</p></li>
             <li><h4>4.6 Procedimientos ante la Corte IDH</h4><p>Contenido próximamente.</p></li>
           </ol>
-          <span class="btn-nav" style="margin-top: 20px; display: inline-block; opacity: 0.5; cursor: not-allowed;">Próximamente</span>
+          <div style="margin-top: 20px;">
+            <span class="btn-nav" style="opacity: 0.5; cursor: not-allowed;">Próximamente</span>
+          </div>
         </div>
       </div>
 
       <!-- CURSO 5 - BLOQUEADO -->
       <div class="tarjeta-unidad tarjeta-unidad-rojo">
-        <button class="cabecera-unidad">
+        <button class="cabecera-unidad" type="button">
           <div class="numero-unidad">5</div>
           <div class="titulo-unidad">
             <h3>Sistema Africano de Derechos Humanos</h3>
@@ -135,7 +141,9 @@
             <li><h4>5.1 Sistema africano</h4><p>Contenido próximamente.</p></li>
             <li><h4>5.6 Corte Africana de Derechos Humanos y de los Pueblos</h4><p>Contenido próximamente.</p></li>
           </ol>
-          <span class="btn-nav" style="margin-top: 20px; display: inline-block; opacity: 0.5; cursor: not-allowed;">Próximamente</span>
+          <div style="margin-top: 20px;">
+            <span class="btn-nav" style="opacity: 0.5; cursor: not-allowed;">Próximamente</span>
+          </div>
         </div>
       </div>
 
@@ -151,10 +159,7 @@
     <p>© 2026 Aula Moyocoyani · Derecho · Cursos</p>
   </footer>
 
-  <!-- ✅ JS GLOBAL desde la raíz -->
   <script src="../../../script.js"></script>
-
-  <!-- Script local: solo el toggle del acordeón -->
   <script>
     document.querySelectorAll('.cabecera-unidad').forEach(boton => {
       boton.addEventListener('click', () => {
