@@ -39,22 +39,22 @@ function crearLectorVoz() {
   if (!document.querySelector('.pantalla')) return;
   if (document.getElementById('btnFlotanteVoz')) return; // Evitar duplicados
 
-  // Variables de estado
   let estaLeyendo = false;
   let vocesDisponibles = [];
   let isDragging = false;
   let offsetX, offsetY;
 
-  // Cargar voces del sistema
   function cargarVoces() {
-    vocesDisponibles = window.speechSynthesis.getVoices();
+    if (typeof speechSynthesis !== 'undefined') {
+      vocesDisponibles = window.speechSynthesis.getVoices();
+    }
   }
   if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
     speechSynthesis.onvoiceschanged = cargarVoces;
   }
 
-  // Crear el botón en el DOM
-  const btnVoz = document.createElement('div');
+  // CREAMOS UN BOTÓN REAL EN LUGAR DE UN DIV
+  const btnVoz = document.createElement('button');
   btnVoz.id = 'btnFlotanteVoz';
   btnVoz.innerHTML = '🔊';
   btnVoz.title = 'Leer en voz alta (Arrastra para mover)';
@@ -66,7 +66,7 @@ function crearLectorVoz() {
   btnVoz.style.width = '60px';
   btnVoz.style.height = '60px';
   btnVoz.style.borderRadius = '50%';
-  btnVoz.style.background = '#1B3A6B'; // Azul Bauhaus
+  btnVoz.style.background = '#1B3A6B'; 
   btnVoz.style.color = 'white';
   btnVoz.style.display = 'flex';
   btnVoz.style.alignItems = 'center';
@@ -77,7 +77,8 @@ function crearLectorVoz() {
   btnVoz.style.boxShadow = '4px 4px 0 #1A1A1A';
   btnVoz.style.border = '3px solid #1A1A1A';
   btnVoz.style.transition = 'background 0.2s, transform 0.1s';
-  btnVoz.style.userSelect = 'none'; // Evitar seleccionar texto al arrastrar
+  btnVoz.style.userSelect = 'none';
+  btnVoz.style.outline = 'none';
 
   document.body.appendChild(btnVoz);
 
@@ -86,10 +87,9 @@ function crearLectorVoz() {
   btnVoz.addEventListener('touchstart', iniciarArrastre, {passive: true});
 
   function iniciarArrastre(e) {
-    isDragging = false; // Se activará si se mueve
+    isDragging = false; 
     const rect = btnVoz.getBoundingClientRect();
     
-    // Calcular desplazamiento
     if (e.type === 'mousedown') {
       offsetX = e.clientX - rect.left;
       offsetY = e.clientY - rect.top;
@@ -111,7 +111,6 @@ function crearLectorVoz() {
     let clientX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
     let clientY = e.type === 'mousemove' ? e.clientY : e.touches[0].clientY;
 
-    // Calcular nuevas posiciones y evitar que se salga de la pantalla
     let newLeft = clientX - offsetX;
     let newTop = clientY - offsetY;
 
@@ -138,9 +137,15 @@ function crearLectorVoz() {
   }
 
   // --- LÓGICA DE LECTURA ---
-  btnVoz.addEventListener('click', () => {
-    // Si el usuario estaba arrastrando, no hacer clic
+  // Usamos 'click' pero protegemos contra el arrastre
+  btnVoz.addEventListener('click', (e) => {
+    e.preventDefault(); // Evitar comportamientos por defecto
+    
+    // Si el usuario movió el botón, no hacer clic
     if (isDragging) return;
+
+    // Si no hay voces cargadas, intentar cargarlas ahora
+    if (vocesDisponibles.length === 0) cargarVoces();
 
     if (estaLeyendo) {
       detenerLectura();
@@ -150,17 +155,21 @@ function crearLectorVoz() {
     const pantallaActiva = document.querySelector('.pantalla.activa');
     if (!pantallaActiva) return;
 
-    // Extraer texto
     let textoALeer = "";
     const elementos = pantallaActiva.querySelectorAll('h1, h2, h3, p, li');
     elementos.forEach(el => {
-      // Ignorar si está oculto o es una caja de placeholder
+      // Ignorar si no se ve (display none, etc) o es placeholder
       if (el.offsetParent !== null && !el.closest('.video-placeholder') && !el.closest('.imagen-placeholder')) {
         textoALeer += el.innerText + ". ";
       }
     });
 
     if (!textoALeer.trim()) return;
+
+    if (typeof speechSynthesis === 'undefined') {
+      alert("Tu navegador no soporta la lectura en voz alta.");
+      return;
+    }
 
     window.speechSynthesis.cancel();
     const mensaje = new SpeechSynthesisUtterance(textoALeer);
@@ -175,8 +184,8 @@ function crearLectorVoz() {
 
     mensaje.onstart = () => {
       estaLeyendo = true;
-      btnVoz.innerHTML = '⏹'; // Cuadrado de stop
-      btnVoz.style.background = '#C1440E'; // Rojo
+      btnVoz.innerHTML = '⏹'; 
+      btnVoz.style.background = '#C1440E'; 
     };
 
     mensaje.onend = () => {
@@ -194,10 +203,9 @@ function crearLectorVoz() {
     window.speechSynthesis.cancel();
     estaLeyendo = false;
     btnVoz.innerHTML = '🔊';
-    btnVoz.style.background = '#1B3A6B'; // Azul
+    btnVoz.style.background = '#1B3A6B'; 
   }
 
-  // Detener lectura automáticamente al cambiar de pantalla
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       if (mutation.attributeName === 'class' && mutation.target.classList.contains('pantalla')) {
